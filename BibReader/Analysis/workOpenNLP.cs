@@ -14,7 +14,7 @@ namespace BibReader.Analysis
 {
     public class WorkOpenNLP
     {
-        public string modelPath = "../../../Resources/Models/";
+        public string modelPath = "./Resources/Models/";
 
         // A part of speech tagger assigns a part of speech(noun, verb etc.) 
         // to each token in a sentence.
@@ -36,7 +36,7 @@ namespace BibReader.Analysis
         // money, percentages and time
         public static string GetNameEntity(string sentence)
         {
-            string modelPath = "../../../Resources/Models/";
+            string modelPath = "./Resources/Models/";
 
             EnglishNameFinder nameFinder = new EnglishNameFinder(modelPath + "NameFind/");
             string[] models = { "person" };
@@ -47,7 +47,7 @@ namespace BibReader.Analysis
 
         public static string GetOrganizationEntity(string sentence)
         {
-            string modelPath = "../../../Resources/Models/";
+            string modelPath = "./Resources/Models/";
 
             EnglishNameFinder organizationFinder = new EnglishNameFinder(modelPath + "namefind/");
             string[] models = { "organization" };
@@ -59,7 +59,7 @@ namespace BibReader.Analysis
         //A parser gives the full syntactic structure of a sentence.
         public static Parse Parse_tree(string sentence)
         {
-            string modelPath = "../../../Resources/Models/";
+            string modelPath = "./Resources/Models/";
 
             EnglishTreebankParser parser = new EnglishTreebankParser(modelPath);
             return parser.DoParse(sentence);
@@ -78,20 +78,19 @@ namespace BibReader.Analysis
 
         public static string[] Lemmatization(string text)
         {
-            string[] tokens;
-            LemmatizerModel model = null;
-            try (InputStream modelIn = new FileInputStream("en-lemmatizer.bin"))) {
-                model = new LemmatizerModel(modelIn);
-            }
-            LemmatizerME lemmatizer = new LemmatizerME(model);
-            string[] postags = new String[] { "NNP", "NNP", "NNP", "POS", "NNP", "NN",
-                "VBD", "PRP", "VBD", "DT", "JJ", "NN", "VBG", "PRP$", "NN", "IN",
-                "NNP", "NNP", "TO", "VB", "JJ", "NNS", "IN", "NNP", "POS", "CD", "NNS",
-                "." };
+            string[] tokens= { };
+            //LemmatizerModel model = null;
+            //try (InputStream modelIn = new FileInputStream("en-lemmatizer.bin")) {
+            //    model = new LemmatizerModel(modelIn);
+            //}
+            //LemmatizerME lemmatizer = new LemmatizerME(model);
+            //string[] postags = new String[] { "NNP", "NNP", "NNP", "POS", "NNP", "NN",
+            //    "VBD", "PRP", "VBD", "DT", "JJ", "NN", "VBG", "PRP$", "NN", "IN",
+            //    "NNP", "NNP", "TO", "VB", "JJ", "NNS", "IN", "NNP", "POS", "CD", "NNS",
+            //    "." };
 
-            string[] lemmas = lemmatizer.lemmatize(tokens, postags);
+            //string[] lemmas = lemmatizer.lemmatize(tokens, postags);
             return tokens;
-            }
         }
     }
 }

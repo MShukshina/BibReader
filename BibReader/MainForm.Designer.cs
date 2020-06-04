@@ -29,27 +29,56 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpData = new System.Windows.Forms.TabPage();
+            this.btSaveSource = new System.Windows.Forms.Button();
+            this.btSaveKeywords = new System.Windows.Forms.Button();
+            this.btSaveAffiliation = new System.Windows.Forms.Button();
+            this.btSaveUrl = new System.Windows.Forms.Button();
+            this.btSaveDoi = new System.Windows.Forms.Button();
+            this.btSavePages = new System.Windows.Forms.Button();
+            this.btSaveNumber = new System.Windows.Forms.Button();
+            this.btSavePublisher = new System.Windows.Forms.Button();
+            this.btSaveVolume = new System.Windows.Forms.Button();
+            this.btSaveYear = new System.Windows.Forms.Button();
+            this.btSaveJournal = new System.Windows.Forms.Button();
+            this.btSaveAbstract = new System.Windows.Forms.Button();
+            this.btSaveTitle = new System.Windows.Forms.Button();
+            this.btSaveAuthors = new System.Windows.Forms.Button();
+            this.btEditPublisher = new System.Windows.Forms.Button();
+            this.btEditNumber = new System.Windows.Forms.Button();
+            this.btEditPages = new System.Windows.Forms.Button();
+            this.btEditDoi = new System.Windows.Forms.Button();
+            this.btEditUrl = new System.Windows.Forms.Button();
+            this.btEditAffiliation = new System.Windows.Forms.Button();
+            this.btEditKeywords = new System.Windows.Forms.Button();
+            this.btEditSource = new System.Windows.Forms.Button();
+            this.btEditVolume = new System.Windows.Forms.Button();
+            this.btEditYear = new System.Windows.Forms.Button();
+            this.btEditJournal = new System.Windows.Forms.Button();
+            this.btEditAbstract = new System.Windows.Forms.Button();
+            this.btEditTitle = new System.Windows.Forms.Button();
+            this.btEditAuthors = new System.Windows.Forms.Button();
             this.tbSourсe = new System.Windows.Forms.TextBox();
             this.tbKeywords = new System.Windows.Forms.TextBox();
             this.tbAffiliation = new System.Windows.Forms.TextBox();
@@ -144,13 +173,13 @@
             this.pbLoadUniqueData = new System.Windows.Forms.ProgressBar();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label2 = new System.Windows.Forms.Label();
             this.labelFindedItemsCount = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbSearchCriterion = new System.Windows.Forms.ComboBox();
             this.btPrevFindedLibItem = new System.Windows.Forms.Button();
             this.btNextFindedLibItem = new System.Windows.Forms.Button();
             this.tbFind = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpData.SuspendLayout();
@@ -174,6 +203,7 @@
             this.contextMenuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -207,6 +237,34 @@
             // tpData
             // 
             this.tpData.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.tpData.Controls.Add(this.btSaveSource);
+            this.tpData.Controls.Add(this.btSaveKeywords);
+            this.tpData.Controls.Add(this.btSaveAffiliation);
+            this.tpData.Controls.Add(this.btSaveUrl);
+            this.tpData.Controls.Add(this.btSaveDoi);
+            this.tpData.Controls.Add(this.btSavePages);
+            this.tpData.Controls.Add(this.btSaveNumber);
+            this.tpData.Controls.Add(this.btSavePublisher);
+            this.tpData.Controls.Add(this.btSaveVolume);
+            this.tpData.Controls.Add(this.btSaveYear);
+            this.tpData.Controls.Add(this.btSaveJournal);
+            this.tpData.Controls.Add(this.btSaveAbstract);
+            this.tpData.Controls.Add(this.btSaveTitle);
+            this.tpData.Controls.Add(this.btSaveAuthors);
+            this.tpData.Controls.Add(this.btEditPublisher);
+            this.tpData.Controls.Add(this.btEditNumber);
+            this.tpData.Controls.Add(this.btEditPages);
+            this.tpData.Controls.Add(this.btEditDoi);
+            this.tpData.Controls.Add(this.btEditUrl);
+            this.tpData.Controls.Add(this.btEditAffiliation);
+            this.tpData.Controls.Add(this.btEditKeywords);
+            this.tpData.Controls.Add(this.btEditSource);
+            this.tpData.Controls.Add(this.btEditVolume);
+            this.tpData.Controls.Add(this.btEditYear);
+            this.tpData.Controls.Add(this.btEditJournal);
+            this.tpData.Controls.Add(this.btEditAbstract);
+            this.tpData.Controls.Add(this.btEditTitle);
+            this.tpData.Controls.Add(this.btEditAuthors);
             this.tpData.Controls.Add(this.tbSourсe);
             this.tpData.Controls.Add(this.tbKeywords);
             this.tpData.Controls.Add(this.tbAffiliation);
@@ -243,144 +301,479 @@
             this.tpData.TabIndex = 0;
             this.tpData.Text = "Данные";
             // 
+            // btSaveSource
+            // 
+            this.btSaveSource.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveSource.BackgroundImage")));
+            this.btSaveSource.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveSource.Location = new System.Drawing.Point(5, 512);
+            this.btSaveSource.Name = "btSaveSource";
+            this.btSaveSource.Size = new System.Drawing.Size(25, 21);
+            this.btSaveSource.TabIndex = 0;
+            this.btSaveSource.UseVisualStyleBackColor = true;
+            this.btSaveSource.Visible = false;
+            this.btSaveSource.Click += new System.EventHandler(this.btSaveSource_Click);
+            // 
+            // btSaveKeywords
+            // 
+            this.btSaveKeywords.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveKeywords.BackgroundImage")));
+            this.btSaveKeywords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveKeywords.Location = new System.Drawing.Point(5, 463);
+            this.btSaveKeywords.Name = "btSaveKeywords";
+            this.btSaveKeywords.Size = new System.Drawing.Size(25, 21);
+            this.btSaveKeywords.TabIndex = 0;
+            this.btSaveKeywords.UseVisualStyleBackColor = true;
+            this.btSaveKeywords.Visible = false;
+            this.btSaveKeywords.Click += new System.EventHandler(this.btSaveKeywords_Click);
+            // 
+            // btSaveAffiliation
+            // 
+            this.btSaveAffiliation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveAffiliation.BackgroundImage")));
+            this.btSaveAffiliation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveAffiliation.Location = new System.Drawing.Point(3, 409);
+            this.btSaveAffiliation.Name = "btSaveAffiliation";
+            this.btSaveAffiliation.Size = new System.Drawing.Size(25, 21);
+            this.btSaveAffiliation.TabIndex = 0;
+            this.btSaveAffiliation.UseVisualStyleBackColor = true;
+            this.btSaveAffiliation.Visible = false;
+            this.btSaveAffiliation.Click += new System.EventHandler(this.btSaveAffiliation_Click);
+            // 
+            // btSaveUrl
+            // 
+            this.btSaveUrl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveUrl.BackgroundImage")));
+            this.btSaveUrl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveUrl.Location = new System.Drawing.Point(5, 354);
+            this.btSaveUrl.Name = "btSaveUrl";
+            this.btSaveUrl.Size = new System.Drawing.Size(25, 21);
+            this.btSaveUrl.TabIndex = 0;
+            this.btSaveUrl.UseVisualStyleBackColor = true;
+            this.btSaveUrl.Visible = false;
+            this.btSaveUrl.Click += new System.EventHandler(this.btSaveUrl_Click);
+            // 
+            // btSaveDoi
+            // 
+            this.btSaveDoi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveDoi.BackgroundImage")));
+            this.btSaveDoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveDoi.Location = new System.Drawing.Point(4, 331);
+            this.btSaveDoi.Name = "btSaveDoi";
+            this.btSaveDoi.Size = new System.Drawing.Size(25, 21);
+            this.btSaveDoi.TabIndex = 0;
+            this.btSaveDoi.UseVisualStyleBackColor = true;
+            this.btSaveDoi.Visible = false;
+            this.btSaveDoi.Click += new System.EventHandler(this.btSaveDoi_Click);
+            // 
+            // btSavePages
+            // 
+            this.btSavePages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSavePages.BackgroundImage")));
+            this.btSavePages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSavePages.Location = new System.Drawing.Point(5, 309);
+            this.btSavePages.Name = "btSavePages";
+            this.btSavePages.Size = new System.Drawing.Size(25, 21);
+            this.btSavePages.TabIndex = 0;
+            this.btSavePages.UseVisualStyleBackColor = true;
+            this.btSavePages.Visible = false;
+            this.btSavePages.Click += new System.EventHandler(this.btSavePages_Click);
+            // 
+            // btSaveNumber
+            // 
+            this.btSaveNumber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveNumber.BackgroundImage")));
+            this.btSaveNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveNumber.Location = new System.Drawing.Point(4, 286);
+            this.btSaveNumber.Name = "btSaveNumber";
+            this.btSaveNumber.Size = new System.Drawing.Size(25, 21);
+            this.btSaveNumber.TabIndex = 0;
+            this.btSaveNumber.UseVisualStyleBackColor = true;
+            this.btSaveNumber.Visible = false;
+            this.btSaveNumber.Click += new System.EventHandler(this.btSaveNumber_Click);
+            // 
+            // btSavePublisher
+            // 
+            this.btSavePublisher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSavePublisher.BackgroundImage")));
+            this.btSavePublisher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSavePublisher.Location = new System.Drawing.Point(5, 263);
+            this.btSavePublisher.Name = "btSavePublisher";
+            this.btSavePublisher.Size = new System.Drawing.Size(25, 21);
+            this.btSavePublisher.TabIndex = 0;
+            this.btSavePublisher.UseVisualStyleBackColor = true;
+            this.btSavePublisher.Visible = false;
+            this.btSavePublisher.Click += new System.EventHandler(this.btSavePublisher_Click);
+            // 
+            // btSaveVolume
+            // 
+            this.btSaveVolume.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveVolume.BackgroundImage")));
+            this.btSaveVolume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveVolume.Location = new System.Drawing.Point(5, 239);
+            this.btSaveVolume.Name = "btSaveVolume";
+            this.btSaveVolume.Size = new System.Drawing.Size(25, 21);
+            this.btSaveVolume.TabIndex = 0;
+            this.btSaveVolume.UseVisualStyleBackColor = true;
+            this.btSaveVolume.Visible = false;
+            this.btSaveVolume.Click += new System.EventHandler(this.btSaveVolume_Click);
+            // 
+            // btSaveYear
+            // 
+            this.btSaveYear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveYear.BackgroundImage")));
+            this.btSaveYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveYear.Location = new System.Drawing.Point(5, 214);
+            this.btSaveYear.Name = "btSaveYear";
+            this.btSaveYear.Size = new System.Drawing.Size(25, 21);
+            this.btSaveYear.TabIndex = 0;
+            this.btSaveYear.UseVisualStyleBackColor = true;
+            this.btSaveYear.Visible = false;
+            this.btSaveYear.Click += new System.EventHandler(this.btSaveYear_Click);
+            // 
+            // btSaveJournal
+            // 
+            this.btSaveJournal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveJournal.BackgroundImage")));
+            this.btSaveJournal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveJournal.Location = new System.Drawing.Point(5, 191);
+            this.btSaveJournal.Name = "btSaveJournal";
+            this.btSaveJournal.Size = new System.Drawing.Size(25, 21);
+            this.btSaveJournal.TabIndex = 0;
+            this.btSaveJournal.UseVisualStyleBackColor = true;
+            this.btSaveJournal.Visible = false;
+            this.btSaveJournal.Click += new System.EventHandler(this.btSaveJournal_Click);
+            // 
+            // btSaveAbstract
+            // 
+            this.btSaveAbstract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveAbstract.BackgroundImage")));
+            this.btSaveAbstract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveAbstract.Location = new System.Drawing.Point(5, 123);
+            this.btSaveAbstract.Name = "btSaveAbstract";
+            this.btSaveAbstract.Size = new System.Drawing.Size(25, 21);
+            this.btSaveAbstract.TabIndex = 0;
+            this.btSaveAbstract.UseVisualStyleBackColor = true;
+            this.btSaveAbstract.Visible = false;
+            this.btSaveAbstract.Click += new System.EventHandler(this.btSaveAbstract_Click);
+            // 
+            // btSaveTitle
+            // 
+            this.btSaveTitle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveTitle.BackgroundImage")));
+            this.btSaveTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveTitle.Location = new System.Drawing.Point(5, 82);
+            this.btSaveTitle.Name = "btSaveTitle";
+            this.btSaveTitle.Size = new System.Drawing.Size(25, 21);
+            this.btSaveTitle.TabIndex = 0;
+            this.btSaveTitle.UseVisualStyleBackColor = true;
+            this.btSaveTitle.Visible = false;
+            this.btSaveTitle.Click += new System.EventHandler(this.btSaveTitle_Click);
+            // 
+            // btSaveAuthors
+            // 
+            this.btSaveAuthors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSaveAuthors.BackgroundImage")));
+            this.btSaveAuthors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btSaveAuthors.Location = new System.Drawing.Point(5, 12);
+            this.btSaveAuthors.Name = "btSaveAuthors";
+            this.btSaveAuthors.Size = new System.Drawing.Size(25, 21);
+            this.btSaveAuthors.TabIndex = 0;
+            this.btSaveAuthors.UseVisualStyleBackColor = true;
+            this.btSaveAuthors.Visible = false;
+            this.btSaveAuthors.Click += new System.EventHandler(this.btSaveAuthors_Click);
+            // 
+            // btEditPublisher
+            // 
+            this.btEditPublisher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditPublisher.BackgroundImage")));
+            this.btEditPublisher.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditPublisher.Location = new System.Drawing.Point(4, 263);
+            this.btEditPublisher.Name = "btEditPublisher";
+            this.btEditPublisher.Size = new System.Drawing.Size(25, 21);
+            this.btEditPublisher.TabIndex = 0;
+            this.btEditPublisher.UseVisualStyleBackColor = true;
+            this.btEditPublisher.Click += new System.EventHandler(this.btEditPublisher_Click);
+            // 
+            // btEditNumber
+            // 
+            this.btEditNumber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditNumber.BackgroundImage")));
+            this.btEditNumber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditNumber.Location = new System.Drawing.Point(4, 286);
+            this.btEditNumber.Name = "btEditNumber";
+            this.btEditNumber.Size = new System.Drawing.Size(25, 21);
+            this.btEditNumber.TabIndex = 0;
+            this.btEditNumber.UseVisualStyleBackColor = true;
+            this.btEditNumber.Click += new System.EventHandler(this.btEditNumber_Click);
+            // 
+            // btEditPages
+            // 
+            this.btEditPages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditPages.BackgroundImage")));
+            this.btEditPages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditPages.Location = new System.Drawing.Point(4, 309);
+            this.btEditPages.Name = "btEditPages";
+            this.btEditPages.Size = new System.Drawing.Size(25, 21);
+            this.btEditPages.TabIndex = 0;
+            this.btEditPages.UseVisualStyleBackColor = true;
+            this.btEditPages.Click += new System.EventHandler(this.btEditPages_Click);
+            // 
+            // btEditDoi
+            // 
+            this.btEditDoi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditDoi.BackgroundImage")));
+            this.btEditDoi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditDoi.Location = new System.Drawing.Point(4, 331);
+            this.btEditDoi.Name = "btEditDoi";
+            this.btEditDoi.Size = new System.Drawing.Size(25, 21);
+            this.btEditDoi.TabIndex = 0;
+            this.btEditDoi.UseVisualStyleBackColor = true;
+            this.btEditDoi.Click += new System.EventHandler(this.btEditDoi_Click);
+            // 
+            // btEditUrl
+            // 
+            this.btEditUrl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditUrl.BackgroundImage")));
+            this.btEditUrl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditUrl.Location = new System.Drawing.Point(4, 354);
+            this.btEditUrl.Name = "btEditUrl";
+            this.btEditUrl.Size = new System.Drawing.Size(25, 21);
+            this.btEditUrl.TabIndex = 0;
+            this.btEditUrl.UseVisualStyleBackColor = true;
+            this.btEditUrl.Click += new System.EventHandler(this.btEditUrl_Click);
+            // 
+            // btEditAffiliation
+            // 
+            this.btEditAffiliation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditAffiliation.BackgroundImage")));
+            this.btEditAffiliation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditAffiliation.Location = new System.Drawing.Point(4, 409);
+            this.btEditAffiliation.Name = "btEditAffiliation";
+            this.btEditAffiliation.Size = new System.Drawing.Size(25, 21);
+            this.btEditAffiliation.TabIndex = 0;
+            this.btEditAffiliation.UseVisualStyleBackColor = true;
+            this.btEditAffiliation.Click += new System.EventHandler(this.btEditAffiliation_Click);
+            // 
+            // btEditKeywords
+            // 
+            this.btEditKeywords.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditKeywords.BackgroundImage")));
+            this.btEditKeywords.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditKeywords.Location = new System.Drawing.Point(4, 463);
+            this.btEditKeywords.Name = "btEditKeywords";
+            this.btEditKeywords.Size = new System.Drawing.Size(25, 21);
+            this.btEditKeywords.TabIndex = 0;
+            this.btEditKeywords.UseVisualStyleBackColor = true;
+            this.btEditKeywords.Click += new System.EventHandler(this.btEditKeywords_Click);
+            // 
+            // btEditSource
+            // 
+            this.btEditSource.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditSource.BackgroundImage")));
+            this.btEditSource.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditSource.Location = new System.Drawing.Point(4, 512);
+            this.btEditSource.Name = "btEditSource";
+            this.btEditSource.Size = new System.Drawing.Size(25, 21);
+            this.btEditSource.TabIndex = 0;
+            this.btEditSource.UseVisualStyleBackColor = true;
+            this.btEditSource.Click += new System.EventHandler(this.btEditSource_Click);
+            // 
+            // btEditVolume
+            // 
+            this.btEditVolume.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditVolume.BackgroundImage")));
+            this.btEditVolume.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditVolume.Location = new System.Drawing.Point(4, 239);
+            this.btEditVolume.Name = "btEditVolume";
+            this.btEditVolume.Size = new System.Drawing.Size(25, 21);
+            this.btEditVolume.TabIndex = 0;
+            this.btEditVolume.UseVisualStyleBackColor = true;
+            this.btEditVolume.Click += new System.EventHandler(this.btEditVolume_Click);
+            // 
+            // btEditYear
+            // 
+            this.btEditYear.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditYear.BackgroundImage")));
+            this.btEditYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditYear.Location = new System.Drawing.Point(4, 214);
+            this.btEditYear.Name = "btEditYear";
+            this.btEditYear.Size = new System.Drawing.Size(25, 21);
+            this.btEditYear.TabIndex = 0;
+            this.btEditYear.UseVisualStyleBackColor = true;
+            this.btEditYear.Click += new System.EventHandler(this.btEditYear_Click);
+            // 
+            // btEditJournal
+            // 
+            this.btEditJournal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditJournal.BackgroundImage")));
+            this.btEditJournal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditJournal.Location = new System.Drawing.Point(4, 191);
+            this.btEditJournal.Name = "btEditJournal";
+            this.btEditJournal.Size = new System.Drawing.Size(25, 21);
+            this.btEditJournal.TabIndex = 0;
+            this.btEditJournal.UseVisualStyleBackColor = true;
+            this.btEditJournal.Click += new System.EventHandler(this.btEditJournal_Click);
+            // 
+            // btEditAbstract
+            // 
+            this.btEditAbstract.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditAbstract.BackgroundImage")));
+            this.btEditAbstract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditAbstract.Location = new System.Drawing.Point(4, 123);
+            this.btEditAbstract.Name = "btEditAbstract";
+            this.btEditAbstract.Size = new System.Drawing.Size(25, 21);
+            this.btEditAbstract.TabIndex = 0;
+            this.btEditAbstract.UseVisualStyleBackColor = true;
+            this.btEditAbstract.Click += new System.EventHandler(this.btEditAbstract_Click);
+            // 
+            // btEditTitle
+            // 
+            this.btEditTitle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditTitle.BackgroundImage")));
+            this.btEditTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditTitle.Location = new System.Drawing.Point(4, 82);
+            this.btEditTitle.Name = "btEditTitle";
+            this.btEditTitle.Size = new System.Drawing.Size(25, 21);
+            this.btEditTitle.TabIndex = 0;
+            this.btEditTitle.UseVisualStyleBackColor = true;
+            this.btEditTitle.Click += new System.EventHandler(this.btEditTitle_Click);
+            // 
+            // btEditAuthors
+            // 
+            this.btEditAuthors.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditAuthors.BackgroundImage")));
+            this.btEditAuthors.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEditAuthors.Location = new System.Drawing.Point(4, 12);
+            this.btEditAuthors.Name = "btEditAuthors";
+            this.btEditAuthors.Size = new System.Drawing.Size(25, 21);
+            this.btEditAuthors.TabIndex = 0;
+            this.btEditAuthors.UseVisualStyleBackColor = true;
+            this.btEditAuthors.Click += new System.EventHandler(this.btEditAuthor_Click);
+            // 
             // tbSourсe
             // 
             this.tbSourсe.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSourсe.Location = new System.Drawing.Point(101, 519);
+            this.tbSourсe.Location = new System.Drawing.Point(122, 516);
             this.tbSourсe.Margin = new System.Windows.Forms.Padding(2);
             this.tbSourсe.Name = "tbSourсe";
-            this.tbSourсe.Size = new System.Drawing.Size(387, 20);
+            this.tbSourсe.ReadOnly = true;
+            this.tbSourсe.Size = new System.Drawing.Size(364, 20);
             this.tbSourсe.TabIndex = 27;
             // 
             // tbKeywords
             // 
             this.tbKeywords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbKeywords.Location = new System.Drawing.Point(101, 470);
+            this.tbKeywords.Location = new System.Drawing.Point(122, 467);
             this.tbKeywords.Margin = new System.Windows.Forms.Padding(2);
             this.tbKeywords.Multiline = true;
             this.tbKeywords.Name = "tbKeywords";
+            this.tbKeywords.ReadOnly = true;
             this.tbKeywords.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbKeywords.Size = new System.Drawing.Size(387, 45);
+            this.tbKeywords.Size = new System.Drawing.Size(364, 45);
             this.tbKeywords.TabIndex = 26;
             // 
             // tbAffiliation
             // 
             this.tbAffiliation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAffiliation.Location = new System.Drawing.Point(101, 416);
+            this.tbAffiliation.Location = new System.Drawing.Point(122, 413);
             this.tbAffiliation.Margin = new System.Windows.Forms.Padding(2);
             this.tbAffiliation.Multiline = true;
             this.tbAffiliation.Name = "tbAffiliation";
+            this.tbAffiliation.ReadOnly = true;
             this.tbAffiliation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAffiliation.Size = new System.Drawing.Size(387, 50);
+            this.tbAffiliation.Size = new System.Drawing.Size(364, 50);
             this.tbAffiliation.TabIndex = 25;
             // 
             // tbUrl
             // 
             this.tbUrl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUrl.Location = new System.Drawing.Point(101, 363);
+            this.tbUrl.Location = new System.Drawing.Point(122, 360);
             this.tbUrl.Margin = new System.Windows.Forms.Padding(2);
             this.tbUrl.Multiline = true;
             this.tbUrl.Name = "tbUrl";
+            this.tbUrl.ReadOnly = true;
             this.tbUrl.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbUrl.Size = new System.Drawing.Size(387, 49);
+            this.tbUrl.Size = new System.Drawing.Size(364, 49);
             this.tbUrl.TabIndex = 24;
             // 
             // tbDoi
             // 
             this.tbDoi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbDoi.Location = new System.Drawing.Point(101, 340);
+            this.tbDoi.Location = new System.Drawing.Point(122, 337);
             this.tbDoi.Margin = new System.Windows.Forms.Padding(2);
             this.tbDoi.Name = "tbDoi";
-            this.tbDoi.Size = new System.Drawing.Size(387, 20);
+            this.tbDoi.ReadOnly = true;
+            this.tbDoi.Size = new System.Drawing.Size(364, 20);
             this.tbDoi.TabIndex = 23;
             // 
             // tbPages
             // 
             this.tbPages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPages.Location = new System.Drawing.Point(101, 318);
+            this.tbPages.Location = new System.Drawing.Point(122, 315);
             this.tbPages.Margin = new System.Windows.Forms.Padding(2);
             this.tbPages.Name = "tbPages";
-            this.tbPages.Size = new System.Drawing.Size(387, 20);
+            this.tbPages.ReadOnly = true;
+            this.tbPages.Size = new System.Drawing.Size(364, 20);
             this.tbPages.TabIndex = 22;
             // 
             // tbNumber
             // 
             this.tbNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbNumber.Location = new System.Drawing.Point(101, 295);
+            this.tbNumber.Location = new System.Drawing.Point(122, 292);
             this.tbNumber.Margin = new System.Windows.Forms.Padding(2);
             this.tbNumber.Name = "tbNumber";
-            this.tbNumber.Size = new System.Drawing.Size(387, 20);
+            this.tbNumber.ReadOnly = true;
+            this.tbNumber.Size = new System.Drawing.Size(364, 20);
             this.tbNumber.TabIndex = 21;
             // 
             // tbPublisher
             // 
             this.tbPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbPublisher.Location = new System.Drawing.Point(101, 272);
+            this.tbPublisher.Location = new System.Drawing.Point(122, 269);
             this.tbPublisher.Margin = new System.Windows.Forms.Padding(2);
             this.tbPublisher.Name = "tbPublisher";
-            this.tbPublisher.Size = new System.Drawing.Size(387, 20);
+            this.tbPublisher.ReadOnly = true;
+            this.tbPublisher.Size = new System.Drawing.Size(364, 20);
             this.tbPublisher.TabIndex = 20;
             // 
             // tbVolume
             // 
             this.tbVolume.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbVolume.Location = new System.Drawing.Point(101, 248);
+            this.tbVolume.Location = new System.Drawing.Point(122, 245);
             this.tbVolume.Margin = new System.Windows.Forms.Padding(2);
             this.tbVolume.Name = "tbVolume";
-            this.tbVolume.Size = new System.Drawing.Size(387, 20);
+            this.tbVolume.ReadOnly = true;
+            this.tbVolume.Size = new System.Drawing.Size(364, 20);
             this.tbVolume.TabIndex = 19;
             // 
             // tbYear
             // 
             this.tbYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbYear.Location = new System.Drawing.Point(101, 224);
+            this.tbYear.Location = new System.Drawing.Point(122, 221);
             this.tbYear.Margin = new System.Windows.Forms.Padding(2);
             this.tbYear.Name = "tbYear";
-            this.tbYear.Size = new System.Drawing.Size(387, 20);
+            this.tbYear.ReadOnly = true;
+            this.tbYear.Size = new System.Drawing.Size(364, 20);
             this.tbYear.TabIndex = 18;
             // 
             // tbJournalName
             // 
             this.tbJournalName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbJournalName.Location = new System.Drawing.Point(101, 200);
+            this.tbJournalName.Location = new System.Drawing.Point(122, 197);
             this.tbJournalName.Margin = new System.Windows.Forms.Padding(2);
             this.tbJournalName.Name = "tbJournalName";
-            this.tbJournalName.Size = new System.Drawing.Size(387, 20);
+            this.tbJournalName.ReadOnly = true;
+            this.tbJournalName.Size = new System.Drawing.Size(364, 20);
             this.tbJournalName.TabIndex = 17;
             // 
             // tbAbstract
             // 
             this.tbAbstract.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAbstract.Location = new System.Drawing.Point(101, 134);
+            this.tbAbstract.Location = new System.Drawing.Point(122, 131);
             this.tbAbstract.Margin = new System.Windows.Forms.Padding(2);
             this.tbAbstract.Multiline = true;
             this.tbAbstract.Name = "tbAbstract";
+            this.tbAbstract.ReadOnly = true;
             this.tbAbstract.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAbstract.Size = new System.Drawing.Size(387, 62);
+            this.tbAbstract.Size = new System.Drawing.Size(364, 62);
             this.tbAbstract.TabIndex = 16;
             // 
             // tbTitle
             // 
             this.tbTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTitle.Location = new System.Drawing.Point(101, 89);
+            this.tbTitle.Location = new System.Drawing.Point(122, 86);
             this.tbTitle.Margin = new System.Windows.Forms.Padding(2);
             this.tbTitle.Multiline = true;
             this.tbTitle.Name = "tbTitle";
+            this.tbTitle.ReadOnly = true;
             this.tbTitle.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbTitle.Size = new System.Drawing.Size(387, 41);
+            this.tbTitle.Size = new System.Drawing.Size(364, 41);
             this.tbTitle.TabIndex = 15;
             this.tbTitle.TextChanged += new System.EventHandler(this.tbTitle_TextChanged);
             // 
@@ -388,19 +781,20 @@
             // 
             this.tbAuthors.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbAuthors.Location = new System.Drawing.Point(101, 16);
+            this.tbAuthors.Location = new System.Drawing.Point(122, 16);
             this.tbAuthors.Margin = new System.Windows.Forms.Padding(2);
             this.tbAuthors.Multiline = true;
             this.tbAuthors.Name = "tbAuthors";
+            this.tbAuthors.ReadOnly = true;
             this.tbAuthors.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbAuthors.Size = new System.Drawing.Size(387, 69);
+            this.tbAuthors.Size = new System.Drawing.Size(364, 66);
             this.tbAuthors.TabIndex = 14;
             this.tbAuthors.TextChanged += new System.EventHandler(this.tbAuthors_TextChanged);
             // 
             // lbNumber
             // 
             this.lbNumber.AutoSize = true;
-            this.lbNumber.Location = new System.Drawing.Point(2, 295);
+            this.lbNumber.Location = new System.Drawing.Point(28, 290);
             this.lbNumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNumber.Name = "lbNumber";
             this.lbNumber.Size = new System.Drawing.Size(41, 13);
@@ -410,7 +804,7 @@
             // lbSourse
             // 
             this.lbSourse.AutoSize = true;
-            this.lbSourse.Location = new System.Drawing.Point(4, 519);
+            this.lbSourse.Location = new System.Drawing.Point(28, 516);
             this.lbSourse.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSourse.Name = "lbSourse";
             this.lbSourse.Size = new System.Drawing.Size(55, 13);
@@ -420,7 +814,7 @@
             // lbPublisher
             // 
             this.lbPublisher.AutoSize = true;
-            this.lbPublisher.Location = new System.Drawing.Point(4, 272);
+            this.lbPublisher.Location = new System.Drawing.Point(28, 267);
             this.lbPublisher.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPublisher.Name = "lbPublisher";
             this.lbPublisher.Size = new System.Drawing.Size(56, 13);
@@ -430,7 +824,7 @@
             // lbKeywords
             // 
             this.lbKeywords.AutoSize = true;
-            this.lbKeywords.Location = new System.Drawing.Point(5, 470);
+            this.lbKeywords.Location = new System.Drawing.Point(28, 467);
             this.lbKeywords.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbKeywords.Name = "lbKeywords";
             this.lbKeywords.Size = new System.Drawing.Size(92, 13);
@@ -440,7 +834,7 @@
             // lbAbstract
             // 
             this.lbAbstract.AutoSize = true;
-            this.lbAbstract.Location = new System.Drawing.Point(4, 132);
+            this.lbAbstract.Location = new System.Drawing.Point(28, 127);
             this.lbAbstract.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAbstract.Name = "lbAbstract";
             this.lbAbstract.Size = new System.Drawing.Size(61, 13);
@@ -450,7 +844,7 @@
             // lbAffiliation
             // 
             this.lbAffiliation.AutoSize = true;
-            this.lbAffiliation.Location = new System.Drawing.Point(5, 418);
+            this.lbAffiliation.Location = new System.Drawing.Point(28, 413);
             this.lbAffiliation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAffiliation.Name = "lbAffiliation";
             this.lbAffiliation.Size = new System.Drawing.Size(94, 13);
@@ -460,7 +854,7 @@
             // lbUrl
             // 
             this.lbUrl.AutoSize = true;
-            this.lbUrl.Location = new System.Drawing.Point(5, 363);
+            this.lbUrl.Location = new System.Drawing.Point(28, 358);
             this.lbUrl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUrl.Name = "lbUrl";
             this.lbUrl.Size = new System.Drawing.Size(46, 13);
@@ -470,7 +864,7 @@
             // lbDoi
             // 
             this.lbDoi.AutoSize = true;
-            this.lbDoi.Location = new System.Drawing.Point(4, 340);
+            this.lbDoi.Location = new System.Drawing.Point(28, 335);
             this.lbDoi.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDoi.Name = "lbDoi";
             this.lbDoi.Size = new System.Drawing.Size(23, 13);
@@ -480,7 +874,7 @@
             // lbPage
             // 
             this.lbPage.AutoSize = true;
-            this.lbPage.Location = new System.Drawing.Point(4, 318);
+            this.lbPage.Location = new System.Drawing.Point(28, 313);
             this.lbPage.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPage.Name = "lbPage";
             this.lbPage.Size = new System.Drawing.Size(57, 13);
@@ -490,7 +884,7 @@
             // lbVolume
             // 
             this.lbVolume.AutoSize = true;
-            this.lbVolume.Location = new System.Drawing.Point(4, 248);
+            this.lbVolume.Location = new System.Drawing.Point(28, 243);
             this.lbVolume.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbVolume.Name = "lbVolume";
             this.lbVolume.Size = new System.Drawing.Size(28, 13);
@@ -500,7 +894,7 @@
             // lbYear
             // 
             this.lbYear.AutoSize = true;
-            this.lbYear.Location = new System.Drawing.Point(4, 227);
+            this.lbYear.Location = new System.Drawing.Point(28, 218);
             this.lbYear.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbYear.Name = "lbYear";
             this.lbYear.Size = new System.Drawing.Size(25, 13);
@@ -510,7 +904,7 @@
             // lbJournalName
             // 
             this.lbJournalName.AutoSize = true;
-            this.lbJournalName.Location = new System.Drawing.Point(4, 200);
+            this.lbJournalName.Location = new System.Drawing.Point(28, 195);
             this.lbJournalName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbJournalName.Name = "lbJournalName";
             this.lbJournalName.Size = new System.Drawing.Size(47, 13);
@@ -520,7 +914,7 @@
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Location = new System.Drawing.Point(4, 89);
+            this.lbTitle.Location = new System.Drawing.Point(28, 86);
             this.lbTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(57, 13);
@@ -530,7 +924,7 @@
             // lbAuthors
             // 
             this.lbAuthors.AutoSize = true;
-            this.lbAuthors.Location = new System.Drawing.Point(4, 16);
+            this.lbAuthors.Location = new System.Drawing.Point(28, 16);
             this.lbAuthors.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAuthors.Name = "lbAuthors";
             this.lbAuthors.Size = new System.Drawing.Size(45, 13);
@@ -740,17 +1134,17 @@
             this.chYear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chYear.BackImageTransparentColor = System.Drawing.Color.White;
             this.chYear.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.chYear.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chYear.Legends.Add(legend1);
+            chartArea19.Name = "ChartArea1";
+            this.chYear.ChartAreas.Add(chartArea19);
+            legend19.Name = "Legend1";
+            this.chYear.Legends.Add(legend19);
             this.chYear.Location = new System.Drawing.Point(3, 5);
             this.chYear.Name = "chYear";
             this.chYear.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chYear.Series.Add(series1);
+            series19.ChartArea = "ChartArea1";
+            series19.Legend = "Legend1";
+            series19.Name = "Series1";
+            this.chYear.Series.Add(series19);
             this.chYear.Size = new System.Drawing.Size(466, 383);
             this.chYear.TabIndex = 1;
             this.chYear.Text = "Годы";
@@ -790,17 +1184,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chSource.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea2.Name = "ChartArea1";
-            this.chSource.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chSource.Legends.Add(legend2);
+            chartArea20.Name = "ChartArea1";
+            this.chSource.ChartAreas.Add(chartArea20);
+            legend20.Name = "Legend1";
+            this.chSource.Legends.Add(legend20);
             this.chSource.Location = new System.Drawing.Point(4, 5);
             this.chSource.Name = "chSource";
             this.chSource.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chSource.Series.Add(series2);
+            series20.ChartArea = "ChartArea1";
+            series20.Legend = "Legend1";
+            series20.Name = "Series1";
+            this.chSource.Series.Add(series20);
             this.chSource.Size = new System.Drawing.Size(465, 400);
             this.chSource.TabIndex = 6;
             this.chSource.Text = "Источники";
@@ -849,17 +1243,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chTypeDocument.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea3.Name = "ChartArea1";
-            this.chTypeDocument.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chTypeDocument.Legends.Add(legend3);
+            chartArea21.Name = "ChartArea1";
+            this.chTypeDocument.ChartAreas.Add(chartArea21);
+            legend21.Name = "Legend1";
+            this.chTypeDocument.Legends.Add(legend21);
             this.chTypeDocument.Location = new System.Drawing.Point(4, 5);
             this.chTypeDocument.Name = "chTypeDocument";
             this.chTypeDocument.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chTypeDocument.Series.Add(series3);
+            series21.ChartArea = "ChartArea1";
+            series21.Legend = "Legend1";
+            series21.Name = "Series1";
+            this.chTypeDocument.Series.Add(series21);
             this.chTypeDocument.Size = new System.Drawing.Size(465, 400);
             this.chTypeDocument.TabIndex = 7;
             this.chTypeDocument.Text = "Тип документа";
@@ -899,17 +1293,17 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chJournal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.chJournal.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.DarkDownwardDiagonal;
-            chartArea4.Name = "ChartArea1";
-            this.chJournal.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chJournal.Legends.Add(legend4);
+            chartArea22.Name = "ChartArea1";
+            this.chJournal.ChartAreas.Add(chartArea22);
+            legend22.Name = "Legend1";
+            this.chJournal.Legends.Add(legend22);
             this.chJournal.Location = new System.Drawing.Point(4, 5);
             this.chJournal.Name = "chJournal";
             this.chJournal.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chJournal.Series.Add(series4);
+            series22.ChartArea = "ChartArea1";
+            series22.Legend = "Legend1";
+            series22.Name = "Series1";
+            this.chJournal.Series.Add(series22);
             this.chJournal.Size = new System.Drawing.Size(465, 400);
             this.chJournal.TabIndex = 8;
             this.chJournal.Text = "Журналы";
@@ -948,17 +1342,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chGeography.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea5.Name = "ChartArea1";
-            this.chGeography.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chGeography.Legends.Add(legend5);
+            chartArea23.Name = "ChartArea1";
+            this.chGeography.ChartAreas.Add(chartArea23);
+            legend23.Name = "Legend1";
+            this.chGeography.Legends.Add(legend23);
             this.chGeography.Location = new System.Drawing.Point(4, 5);
             this.chGeography.Name = "chGeography";
             this.chGeography.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chGeography.Series.Add(series5);
+            series23.ChartArea = "ChartArea1";
+            series23.Legend = "Legend1";
+            series23.Name = "Series1";
+            this.chGeography.Series.Add(series23);
             this.chGeography.Size = new System.Drawing.Size(465, 400);
             this.chGeography.TabIndex = 9;
             this.chGeography.Text = "География";
@@ -997,17 +1391,17 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.chConference.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            chartArea6.Name = "ChartArea1";
-            this.chConference.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chConference.Legends.Add(legend6);
+            chartArea24.Name = "ChartArea1";
+            this.chConference.ChartAreas.Add(chartArea24);
+            legend24.Name = "Legend1";
+            this.chConference.Legends.Add(legend24);
             this.chConference.Location = new System.Drawing.Point(4, 5);
             this.chConference.Name = "chConference";
             this.chConference.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series6.ChartArea = "ChartArea1";
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chConference.Series.Add(series6);
+            series24.ChartArea = "ChartArea1";
+            series24.Legend = "Legend1";
+            series24.Name = "Series1";
+            this.chConference.Series.Add(series24);
             this.chConference.Size = new System.Drawing.Size(465, 400);
             this.chConference.TabIndex = 9;
             this.chConference.Text = "Конференции";
@@ -1350,23 +1744,14 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(129, 17);
             this.toolStripStatusLabel1.Text = "Last opened file name: ";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(609, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Найдено";
-            // 
             // labelFindedItemsCount
             // 
             this.labelFindedItemsCount.AutoSize = true;
-            this.labelFindedItemsCount.Location = new System.Drawing.Point(614, 49);
+            this.labelFindedItemsCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFindedItemsCount.Location = new System.Drawing.Point(14, 26);
             this.labelFindedItemsCount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFindedItemsCount.Name = "labelFindedItemsCount";
-            this.labelFindedItemsCount.Size = new System.Drawing.Size(0, 13);
+            this.labelFindedItemsCount.Size = new System.Drawing.Size(0, 24);
             this.labelFindedItemsCount.TabIndex = 16;
             // 
             // groupBox2
@@ -1392,8 +1777,11 @@
             this.cbSearchCriterion.Items.AddRange(new object[] {
             "По названию",
             "По аннотациям",
-            "По авторам"});
-            this.cbSearchCriterion.Location = new System.Drawing.Point(4, 45);
+            "По авторам",
+            "По издателю",
+            "По ключевым словам",
+            "По источнику"});
+            this.cbSearchCriterion.Location = new System.Drawing.Point(4, 40);
             this.cbSearchCriterion.Margin = new System.Windows.Forms.Padding(2);
             this.cbSearchCriterion.Name = "cbSearchCriterion";
             this.cbSearchCriterion.Size = new System.Drawing.Size(168, 21);
@@ -1402,7 +1790,7 @@
             // btPrevFindedLibItem
             // 
             this.btPrevFindedLibItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btPrevFindedLibItem.Location = new System.Drawing.Point(176, 20);
+            this.btPrevFindedLibItem.Location = new System.Drawing.Point(176, 15);
             this.btPrevFindedLibItem.Margin = new System.Windows.Forms.Padding(2);
             this.btPrevFindedLibItem.Name = "btPrevFindedLibItem";
             this.btPrevFindedLibItem.Size = new System.Drawing.Size(29, 21);
@@ -1413,23 +1801,35 @@
             // btNextFindedLibItem
             // 
             this.btNextFindedLibItem.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btNextFindedLibItem.Location = new System.Drawing.Point(206, 20);
+            this.btNextFindedLibItem.Location = new System.Drawing.Point(206, 15);
             this.btNextFindedLibItem.Margin = new System.Windows.Forms.Padding(2);
             this.btNextFindedLibItem.Name = "btNextFindedLibItem";
             this.btNextFindedLibItem.Size = new System.Drawing.Size(29, 21);
             this.btNextFindedLibItem.TabIndex = 16;
             this.btNextFindedLibItem.Text = ">>";
             this.btNextFindedLibItem.UseVisualStyleBackColor = false;
-            this.btNextFindedLibItem.Click += new System.EventHandler(this.btNextFindedLibItem_Click_1);
+            this.btNextFindedLibItem.Click += new System.EventHandler(this.btNextFindedLibItem_Click);
             // 
             // tbFind
             // 
             this.tbFind.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbFind.Location = new System.Drawing.Point(4, 21);
+            this.tbFind.Location = new System.Drawing.Point(4, 16);
             this.tbFind.Margin = new System.Windows.Forms.Padding(2);
             this.tbFind.Name = "tbFind";
             this.tbFind.Size = new System.Drawing.Size(168, 20);
             this.tbFind.TabIndex = 15;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.labelFindedItemsCount);
+            this.groupBox3.Location = new System.Drawing.Point(609, 24);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox3.Size = new System.Drawing.Size(68, 70);
+            this.groupBox3.TabIndex = 18;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Найдено";
             // 
             // MainForm
             // 
@@ -1437,9 +1837,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1270, 642);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.labelFindedItemsCount);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pbLoadUniqueData);
             this.Controls.Add(this.btRelevance);
@@ -1482,6 +1881,8 @@
             this.statusStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1558,7 +1959,6 @@
         private System.Windows.Forms.ListView lvGeography;
         private System.Windows.Forms.TabPage tpConf;
         private System.Windows.Forms.ListView lvConferenceStat;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelFindedItemsCount;
         private System.Windows.Forms.Button btSaveBibRef;
         private System.Windows.Forms.ToolStripMenuItem корпусДокументовToolStripMenuItem;
@@ -1592,6 +1992,35 @@
         private System.Windows.Forms.ToolStripMenuItem аннотацияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ключевыеСловаToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem открытьДокументToolStripMenuItem;
+        private System.Windows.Forms.Button btEditPublisher;
+        private System.Windows.Forms.Button btEditNumber;
+        private System.Windows.Forms.Button btEditPages;
+        private System.Windows.Forms.Button btEditDoi;
+        private System.Windows.Forms.Button btEditUrl;
+        private System.Windows.Forms.Button btEditAffiliation;
+        private System.Windows.Forms.Button btEditKeywords;
+        private System.Windows.Forms.Button btEditSource;
+        private System.Windows.Forms.Button btEditVolume;
+        private System.Windows.Forms.Button btEditYear;
+        private System.Windows.Forms.Button btEditJournal;
+        private System.Windows.Forms.Button btEditAbstract;
+        private System.Windows.Forms.Button btEditTitle;
+        private System.Windows.Forms.Button btEditAuthors;
+        private System.Windows.Forms.Button btSaveSource;
+        private System.Windows.Forms.Button btSaveKeywords;
+        private System.Windows.Forms.Button btSaveAffiliation;
+        private System.Windows.Forms.Button btSaveUrl;
+        private System.Windows.Forms.Button btSaveDoi;
+        private System.Windows.Forms.Button btSavePages;
+        private System.Windows.Forms.Button btSaveNumber;
+        private System.Windows.Forms.Button btSavePublisher;
+        private System.Windows.Forms.Button btSaveVolume;
+        private System.Windows.Forms.Button btSaveYear;
+        private System.Windows.Forms.Button btSaveJournal;
+        private System.Windows.Forms.Button btSaveAbstract;
+        private System.Windows.Forms.Button btSaveTitle;
+        private System.Windows.Forms.Button btSaveAuthors;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

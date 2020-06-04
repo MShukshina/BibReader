@@ -6,13 +6,18 @@ namespace BibReader.Readers
     {
         public CsvConverter() { }
 
+        private bool isAuthor(char letter1, char letter2)
+        {
+            return letter1 >= 'a' && letter1 <= 'z' && letter2 >= 'A' && letter2 <= 'Z';
+        }
+
         public string parseAuthors(string authors)
         {
             string strAuthors = "";
             int i = 0;
             while (authors != "" && i < authors.Length - 1)
             {
-                if (authors[i] >= 'a' && authors[i] <= 'z' && authors[i + 1] >= 'A' && authors[i + 1] <= 'Z')
+                if (isAuthor(authors[i], authors[i + 1]))
                 {
                     strAuthors += authors.Substring(0, i) + " and ";
                     authors = authors.Substring(i + 1);
@@ -65,10 +70,14 @@ namespace BibReader.Readers
             bibItem = "";
         }
 
-        public BibItem(string _itemType, string _author, string _doi, string _journal, string _title, string _year,
-                       string _url = "", string _abstr = "", string _affiliation = "", string _keywords = "",
-                       string _number = "", string _pages = "", string _publisher = "", string _source = "",
-                       string _volume = "", string _document_type = "", string _note = "", string _abbrev_source_title = "")
+        public BibItem(
+            string _itemType, string _author, string _doi, string _journal, 
+            string _title, string _year, string _url = "", string _abstr = "", 
+            string _affiliation = "", string _keywords = "", string _number = "", 
+            string _pages = "", string _publisher = "", string _source = "",
+            string _volume = "", string _document_type = "", string _note = "",
+            string _abbrev_source_title = ""
+            )
         {
             bibItem = '@' + _itemType + "{" + '\n'
                        + "author={" + _author + "}," + '\n'

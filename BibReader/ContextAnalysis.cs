@@ -1,4 +1,5 @@
 ﻿using BibReader.Analysis;
+using OpenNLP.Tools.Parser;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,21 +13,31 @@ namespace BibReader
 {
     public partial class ContextAnalysis : Form
     {
-        Random rand;
+        private bool isLoadConcepts = false;
+        private bool isLoadThesaurus = false;
+        private bool isLoadNames = false;
+        private bool isLoadOrganizations = false;
+
+        private string stopword;
+        private bool isValue = false;
+
+        private Random rand;
 
         private Circle circle = new Circle();
-        Graphics gr;
+        private Graphics gr;
+        private Bitmap graphics;
 
-        int maxValue;
-        double averageValue;
+        private int maxValue;
+        private double averageValue;
 
-        Dictionary<PointF, int> circles;
+        private Dictionary<PointF, int> circles;
 
         public string Info
         {
             set => tbContext.Text = value;
             get => tbContext.Text;
         }
+        public object Stopworlds { get; private set; }
 
         public ContextAnalysis()
         {
@@ -35,27 +46,27 @@ namespace BibReader
             circles = new Dictionary<PointF, int>();
         }
 
-        private int[] orderByKeyValue(Dictionary<string, int> analitics)
+        private int[] orderByKeyValue(Dictionary<string, DataTag> analitics)
         {
             averageValue = TextAnalysis.getAverageValueConcepts();
             return analitics
-                .OrderByDescending(i => i.Value)
+                .OrderByDescending(i => i.Value.count)
                 .Take(10)
-                .Select(item => item.Value)
+                .Select(item => item.Value.count)
                 .ToArray();
         }
 
-        private string[] orderByKeyKey(Dictionary<string, int> analitic)
+        private string[] orderByKeyKey(Dictionary<string, DataTag> analitic)
         {
             averageValue = TextAnalysis.getAverageValueConcepts();
             return analitic
-                .OrderByDescending(i => i.Value)
+                .OrderByDescending(i => i.Value.count)
                 .Take(10)
                 .Select(item => item.Key)
                 .ToArray();
         }
 
-        public void LoadSynopsis()
+        private void LoadSynopsis()
         {
             lvSynopsis.Clear();
             lvSynopsis.Columns.Add("Понятие");
@@ -64,7 +75,7 @@ namespace BibReader
             if (TextAnalysis.Concepts.Count > 0)
             {
                 lvSynopsis.Items.AddRange(TextAnalysis.Concepts
-                    .OrderByDescending(i => i.Value)
+                    .OrderByDescending(i => i.Value.count)
                     .Take(10)
                     .Select(item =>
                     {
@@ -82,7 +93,7 @@ namespace BibReader
             }
         }
 
-        public void LoadThesaurus()
+        private void LoadThesaurus()
         {
             lvThesaurus.Clear();
 
@@ -94,16 +105,17 @@ namespace BibReader
             if (TextAnalysis.Concepts.Count > 0)
             {
                 lvThesaurus.Items.AddRange(TextAnalysis.Concepts
-                    .OrderByDescending(i => i.Value)
-                    .Where(i => i.Value > averageValue)
+                    .OrderByDescending(i => i.Value.count)
+                    .Where(i => i.Value.count > averageValue)
                     .Select(item =>
                         new ListViewItem(
                             new string[] {
                         item.Key,
-                        item.Value.ToString(),
-                        TextAnalysis.POS[item.Key]
+                        item.Value.count.ToString(),
+                        //TextAnalysis.POS[item.Key]
                      })).ToArray());
             }
+            isLoadThesaurus = true;
         }
 
         private double GetDistancePoints(PointF pos1, PointF pos2)
@@ -154,45 +166,16 @@ namespace BibReader
             return pos;
         }
 
-        public void LoadGraphics()
+        private void LoadGraphics()
         {
-            gr = pGraphic.CreateGraphics();
+            graphics = new Bitmap(pGraphic.Width, pGraphic.Height);
+            gr = Graphics.FromImage(graphics);
             gr.Clear(Color.White);
 
-            int count = TextAnalysis.Concepts.Count;
-
-            if (count > 0)
-            {
-                maxValue = TextAnalysis.getMaxVvalueConcepts();
-                int minValue = TextAnalysis.getMinVvalueConcepts();
-
-                int maxRadius = (maxValue - minValue) / maxValue * 200;
-
-                int countCircles = 0;
-
-                foreach (KeyValuePair<string, int> item in TextAnalysis.Concepts.OrderByDescending(i => i.Value))
-                {
-                    if (item.Value > averageValue && countCircles < 20)
-                    {
-                        Color fullColor = Color.FromArgb(45, rand.Next(255), rand.Next(255), rand.Next(255));
-
-                        double norma = (item.Value - minValue) / (double)maxValue;
-
-                        int radius = (int)((norma * 200) > 30 ? norma * 200 : 50);
-
-                        Font font = new Font(FontFamily.GenericSansSerif, 9);
-
-                        PointF pos = GetPosition(radius);
-
-                        circle.Draw(gr, item.Key, radius, fullColor, fullColor, font, pos);
-                        countCircles++;
-                    }
-                    else break;
-                }
-            }
+            getGraphics();
         }
 
-        public void LoadNames()
+        private void LoadNames()
         {
             lvPerson.Clear();
             lvPerson.Columns.Add("Персона");
@@ -206,9 +189,10 @@ namespace BibReader
                     ).ToArray()
                 );
             }
+            isLoadNames = true;
         }
 
-        public void LoadOrganizations()
+        private void LoadOrganizations()
         {
             lvOrganization.Clear();
             lvOrganization.Columns.Add("Организация");
@@ -222,10 +206,11 @@ namespace BibReader
                     ).ToArray()
                 );
             }
+            isLoadOrganizations = true;
         }
 
 
-        public void LoadConcepts()
+        private void LoadConcepts()
         {
             lvConcepts.Clear();
             if (TextAnalysis.Concepts.Count > 0)
@@ -241,20 +226,21 @@ namespace BibReader
 
                 int count = TextAnalysis.Concepts.Count;
                 lvConcepts.Items.AddRange(TextAnalysis.Concepts
-                    .OrderByDescending(i => i.Value)
-                    .Where(i => i.Value > averageValue)
+                    .OrderByDescending(i => i.Value.count)
+                    .Where(i => i.Value.count > averageValue)
                     .Select(item =>
                     {
                         ListViewItem itm = new ListViewItem(
                             new string[] {
                         item.Key,
-                        item.Value.ToString(),
-                        Math.Round((double)item.Value / count * 100, 2).ToString() + "%"
+                        item.Value.count.ToString(),
+                        Math.Round((double)item.Value.count / count * 100, 2).ToString() + "%"
                             });
-                        itm.Tag = item.Value / count * 100;
+                        itm.Tag = item.Value.count / count * 100;
                         return itm;
                     }).ToArray());
             }
+            isLoadConcepts = true;
         }
 
         private void OpenDiagram(Chart chart, string[] xValues, int[] yValues, string seriesName)
@@ -282,10 +268,6 @@ namespace BibReader
         private void ContextAnalysis_Load(object sender, EventArgs e)
         {
             LoadSynopsis();
-            LoadConcepts();
-            LoadThesaurus();
-            LoadNames();
-            LoadOrganizations();
         }
 
         private void ContextAnalysis_Shown(object sender, EventArgs e)
@@ -424,6 +406,248 @@ namespace BibReader
                 }
             }
             return;
+        }
+
+        private void saveDiagram()
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+
+            saveFileDialog.Filter = "png files (*.png)|*.png|all files (*.*)|*.*";
+            saveFileDialog.FilterIndex = 1;
+            saveFileDialog.RestoreDirectory = true;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+               graphics.Save(saveFileDialog.FileName, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+        }
+
+        private void btSaveDiagram_Click(object sender, EventArgs e)
+        {
+            PictureBox pb = pGraphic;
+            if (pb != null)
+            {
+                saveDiagram();
+            }
+        }
+
+        private void InitializeStopWords()
+        {
+            lvStopwords.Clear();
+
+            lvStopwords.Columns.Add("Стоп-слово");
+            lvStopwords.Columns[0].Width = lvStopwords.Width - 5;
+
+            if (Stopwords.userStopwords.Count < 1)
+            {
+                return;
+            }
+
+            foreach (string word in Stopwords.userStopwords)
+            {
+                lvStopwords.Items.Add(word);
+            }
+        }
+
+        private void setParameters(TextBox tb, ref bool parametr)
+        {
+            if (tb.Text.Length > 0)
+            {
+                parametr = true;
+            }
+            else
+            {
+                parametr = false;
+            }
+        }
+
+
+        private void isButtonEnable(Button button, bool isValue)
+        {
+            if (isValue)
+            {
+                button.Enabled = true;
+            }
+            else
+            {
+                button.Enabled = false;
+            }
+        }
+
+        private void btAddStopword_Click(object sender, EventArgs e)
+        {
+            if (!Stopwords.userStopwords.Contains(tbValue.Text))
+            {
+                Stopwords.userStopwords.Add(tbValue.Text);
+                tbValue.Text = "";
+                InitializeStopWords();
+            }
+            else
+            {
+                MessageBox.Show("Такое значение уже существует. Назовите, пожалуйста, дугое слово", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbValue.SelectAll();
+                tbValue.Focus();
+            }
+            isButtonEnable(btReAnalysis,  Stopwords.userStopwords.Count > 0);
+        }
+
+        private void btDeleteStopword_Click(object sender, EventArgs e)
+        {
+            Stopwords.userStopwords.Remove(stopword);
+            btDelete.Enabled = false;
+            InitializeStopWords();
+            isButtonEnable(btReAnalysis, Stopwords.userStopwords.Count > 0);
+        }
+
+        private void lvStopwords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection selectedStopwords = this.lvStopwords.SelectedItems;
+            if (selectedStopwords.Count < 1)
+            {
+                btDelete.Enabled = false;
+            }
+            else
+            {
+                foreach (ListViewItem item in selectedStopwords)
+                {
+                    stopword = item.Text;
+                    btDelete.Enabled = true;
+                }
+            }
+        }
+
+        private void tbValue_TextChanged(object sender, EventArgs e)
+        {
+            setParameters(tbValue, ref isValue);
+            isButtonEnable(btAdd, isValue);
+        }
+
+        private void getGraphics()
+        {
+            int count = TextAnalysis.Concepts.Count;
+
+            if (count > 0)
+            {
+                maxValue = TextAnalysis.getMaxVvalueConcepts();
+                int minValue = TextAnalysis.getMinVvalueConcepts();
+
+                int countCircles = 0;
+
+                foreach (KeyValuePair<string, DataTag> item in TextAnalysis.Concepts.OrderByDescending(i => i.Value.count))
+                {
+                    if (item.Value.count > averageValue && countCircles < 20)
+                    {
+                        Color fullColor = Color.FromArgb(45, rand.Next(255), rand.Next(255), rand.Next(255));
+
+                        double norma = (item.Value.count - minValue) / (double)maxValue;
+
+                        int radius = (int)((norma * 200) > 30 ? norma * 200 : 50);
+
+                        Font font = new Font(FontFamily.GenericSansSerif, 9);
+
+                        PointF pos = GetPosition(radius);
+
+                        item.Value.point = new PointF(pos.X - radius / 2, pos.Y - radius / 2);
+
+                        circle.Draw(gr, item.Key, radius, fullColor, fullColor, font, pos);
+                        pGraphic.Image = graphics;
+                        countCircles++;
+                    }
+                    else break;
+                }
+            }
+        }
+
+        private void getGraphicsConnections()
+        {
+            int count = TextAnalysis.Concepts.Count;
+
+            if (count > 0)
+            {
+                int countCircles = 0;
+
+                foreach (KeyValuePair<string, DataTag> item in TextAnalysis.Concepts.OrderByDescending(i => i.Value.count))
+                {
+                    if (item.Value.count > averageValue && countCircles < 20)
+                    {
+                        foreach (string neighbor in item.Value.neighbors)
+                        {
+                            if (TextAnalysis.Concepts[neighbor].count > averageValue && 
+                                TextAnalysis.Concepts[neighbor].point != new PointF(0,0))
+                            {
+                                using (Pen pen = new Pen(Color.FromArgb(70, 105, 105, 105), 1.5F))
+                                {
+                                    gr.DrawLine(
+                                        pen,
+                                        item.Value.point.X, 
+                                        item.Value.point.Y,
+                                        TextAnalysis.Concepts[neighbor].point.X,
+                                        TextAnalysis.Concepts[neighbor].point.Y
+                                        );
+                                }
+                                pGraphic.Image = graphics;
+                            }
+                        }
+                        countCircles++;
+                    } else
+                    {
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void btReAnalysis_Click(object sender, EventArgs e)
+        {
+            gr.Clear(Color.White);
+            circles.Clear();
+            TextAnalysis.setConceptsAnalysisWithStopwords();
+            getGraphics();
+        }
+
+        private void tabControlForAnalisys_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (tabControlForAnalisys.SelectedIndex)
+            {
+                case 1:
+                    {
+                        if (isLoadConcepts)
+                        {
+                            break;
+                        }
+                        LoadConcepts();
+                        break;
+                    }
+                case 2:
+                    {
+                        if (isLoadThesaurus)
+                        {
+                            break;
+                        }
+                        //TextAnalysis.(titles);
+                        LoadThesaurus();
+                        break;
+                    }
+                case 3:
+                    {
+                        if (isLoadNames && isLoadOrganizations)
+                        {
+                            break;
+                        }
+                        //TextAnalysis.getNames(Info);
+                        //TextAnalysis.SetNamesAnalysis();
+                        //LoadNames();
+                        //TextAnalysis.SetOrganizationAnalysis();
+                        //LoadOrganizations();
+                        break;
+                    }
+            }
+        }
+
+        private void btConnection_Click(object sender, EventArgs e)
+        {
+            TextAnalysis.GetParseTree(Info);
+            getGraphicsConnections();
         }
     }
 }

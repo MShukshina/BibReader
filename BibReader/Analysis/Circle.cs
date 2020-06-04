@@ -41,10 +41,10 @@ namespace BibReader.Analysis
                     gr.FillEllipse(brush, rect);
                 }
 
-                using (var brush = new SolidBrush(Color.FromArgb(70, 105, 105, 105)))
+                using (Brush brush = new SolidBrush(Color.FromArgb(70, 105, 105, 105)))
                 {
                     gr.FillEllipse(
-                        brush, 
+                        brush,
                         pos.X - radius / 2, 
                         pos.Y - radius / 2, 
                         SunSpotDiameter, 

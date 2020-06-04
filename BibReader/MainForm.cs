@@ -124,6 +124,7 @@ namespace BibReader
             btRelevance.Enabled = false;
             cbBibStyles.SelectedIndex = 0;
             cbSearchCriterion.SelectedIndex = 0;
+            enabledEditProperties(false);
         }
 
         private void AddLibItemsInLvItems()
@@ -203,6 +204,26 @@ namespace BibReader
             AddLibItemsInLvItems();
         }
 
+        private void enabledEditProperties(bool enabled)
+        {
+            btEditAuthors.Enabled = enabled;
+            btEditTitle.Enabled = enabled;
+            btEditAbstract.Enabled = enabled;
+            btEditJournal.Enabled = enabled;
+            btEditYear.Enabled = enabled;
+            btEditVolume.Enabled = enabled;
+            btEditPublisher.Enabled = enabled;
+            btEditNumber.Enabled = enabled;
+            btEditPages.Enabled = enabled;
+            btEditDoi.Enabled = enabled;
+            btEditUrl.Enabled = enabled;
+            btEditAffiliation.Enabled = enabled;
+            btEditKeywords.Enabled = enabled;
+            btEditSource.Enabled = enabled;
+             
+
+        }
+
         private void lvItems_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
             if (e.IsSelected)
@@ -223,6 +244,10 @@ namespace BibReader
                 tbVolume.Text = item.Volume;
                 tbYear.Text = item.Year;
                 lbCurrSelectedItem.Text = $"{lvLibItems.SelectedIndices[0] + 1}/{lvLibItems.Items.Count}";
+                enabledEditProperties(true);
+            } else
+            {
+                enabledEditProperties(false);
             }
         }
 
@@ -470,6 +495,24 @@ namespace BibReader
                     break;
                 case 2:
                     indexes = Collection.MakeListOfIndexes(tbFind.Text, lvLibItems, 1);
+                    break;
+                case 3:
+                    indexes = Collection.MakeListOfIndexes(
+                            tbFind.Text,
+                            lvLibItems.Items.Cast<ListViewItem>().Select(item => ((LibItem)item.Tag).Publisher).ToList()
+                    );
+                    break;
+                case 4:
+                    indexes = Collection.MakeListOfIndexes(
+                            tbFind.Text,
+                            lvLibItems.Items.Cast<ListViewItem>().Select(item => ((LibItem)item.Tag).Keywords).ToList()
+                    );
+                    break;
+                case 5:
+                    indexes = Collection.MakeListOfIndexes(
+                            tbFind.Text,
+                            lvLibItems.Items.Cast<ListViewItem>().Select(item => ((LibItem)item.Tag).Sourсe).ToList()
+                    );
                     break;
                 default:
                     return 0;
@@ -813,8 +856,8 @@ namespace BibReader
                .Where(item => item.Abstract != string.Empty)
                .Select(item => item.Abstract)
                );
-            TextAnalysis.getAnalysis(annotations);
-            var form = new ContextAnalysis() { Info = TextAnalysis.GetParseTree(annotations) };
+            TextAnalysis.SetConceptsAnalysis(annotations);
+            var form = new ContextAnalysis() { Info = annotations };
             form.Show();
         }
 
@@ -825,8 +868,8 @@ namespace BibReader
                 .Where(item => item.Title != string.Empty)
                 .Select(item => item.Title)
                 );
-            TextAnalysis.getAnalysis(titles);
-            var form = new ContextAnalysis() { Info = TextAnalysis.GetParseTree(titles)};
+            TextAnalysis.SetConceptsAnalysis(titles);
+            var form = new ContextAnalysis() { Info = titles};
             form.Show();
         }
 
@@ -837,7 +880,7 @@ namespace BibReader
                .Where(item => item.Keywords != string.Empty)
                .Select(item => item.Keywords)
                );
-            TextAnalysis.getAnalysis(keywords);
+            TextAnalysis.SetConceptsAnalysis(keywords);
             var form = new ContextAnalysis() { Info = keywords };
             form.Show();
         }
@@ -865,9 +908,242 @@ namespace BibReader
                         text += GetText(reader);
                 }
             }
-            TextAnalysis.getAnalysis(text);
             var form = new ContextAnalysis() { Info = text };
             form.Show();
+        }
+
+        private void setReadOnlyTextBox(TextBox textBox, bool readOnly)
+        {
+            if (readOnly)
+            {
+                textBox.ReadOnly = true;
+            }
+            else
+            {
+                textBox.ReadOnly = false;
+            }
+        }
+
+        private void setVisibleButton(Button button, bool visible)
+        {
+            if (visible)
+            {
+                button.Visible = true;
+            }
+            else
+            {
+                button.Visible = false;
+            }
+        }
+
+        private void btEditAuthor_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAuthors, false);
+            setVisibleButton(btEditAuthors, false);
+            setVisibleButton(btSaveAuthors, true);
+        }
+
+        private void btEditTitle_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbTitle, false);
+            setVisibleButton(btEditTitle, false);
+            setVisibleButton(btSaveTitle, true);
+        }
+
+        private void btEditAbstract_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAbstract, false);
+            setVisibleButton(btEditAbstract, false);
+            setVisibleButton(btSaveAbstract, true);
+        }
+
+        private void btEditJournal_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbJournalName, false);
+            setVisibleButton(btEditJournal, false);
+            setVisibleButton(btSaveJournal, true);
+        }
+
+        private void btEditYear_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbYear, false);
+            setVisibleButton(btEditYear, false);
+            setVisibleButton(btSaveYear, true);
+        }
+
+        private void btEditVolume_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbVolume, false);
+            setVisibleButton(btEditVolume, false);
+            setVisibleButton(btSaveVolume, true);
+        }
+
+        private void btEditPublisher_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbPublisher, false);
+            setVisibleButton(btEditPublisher, false);
+            setVisibleButton(btSavePublisher, true);
+        }
+
+        private void btEditNumber_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbNumber, false);
+            setVisibleButton(btEditAuthors, false);
+            setVisibleButton(btSaveAuthors, true);
+        }
+
+        private void btEditPages_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbPages, false);
+            setVisibleButton(btEditPages, false);
+            setVisibleButton(btSavePages, true);
+        }
+
+        private void btEditDoi_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbDoi, false);
+            setVisibleButton(btEditDoi, false);
+            setVisibleButton(btSaveDoi, true);
+        }
+
+        private void btEditUrl_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbUrl, false);
+            setVisibleButton(btEditUrl, false);
+            setVisibleButton(btSaveUrl, true);
+        }
+
+        private void btEditAffiliation_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAffiliation, false);
+            setVisibleButton(btEditAffiliation, false);
+            setVisibleButton(btSaveAffiliation, true);
+        }
+
+        private void btEditKeywords_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbKeywords, false);
+            setVisibleButton(btEditKeywords, false);
+            setVisibleButton(btSaveKeywords, true);
+        }
+
+        private void btEditSource_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbSourсe, false);
+            setVisibleButton(btEditSource, false);
+            setVisibleButton(btSaveSource, true);
+        }
+
+        private void btSaveAuthors_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAuthors, true);
+            setVisibleButton(btSaveAuthors, false);
+            setVisibleButton(btEditAuthors, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Authors = tbAuthors.Text;
+        }
+
+        private void btSaveTitle_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbTitle, true);
+            setVisibleButton(btSaveTitle, false);
+            setVisibleButton(btEditTitle, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Title = tbTitle.Text;
+        }
+
+        private void btSaveAbstract_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAbstract, true);
+            setVisibleButton(btSaveAbstract, false);
+            setVisibleButton(btEditAbstract, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Abstract = tbAbstract.Text;
+        }
+
+        private void btSaveJournal_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbJournalName, true);
+            setVisibleButton(btSaveJournal, false);
+            setVisibleButton(btEditJournal, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).JournalName = tbJournalName.Text;
+        }
+
+        private void btSaveYear_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbYear, true);
+            setVisibleButton(btSaveYear, false);
+            setVisibleButton(btEditYear, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Year = tbYear.Text;
+        }
+
+        private void btSaveVolume_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbVolume, true);
+            setVisibleButton(btSaveVolume, false);
+            setVisibleButton(btEditVolume, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Volume = tbVolume.Text;
+        }
+
+        private void btSavePublisher_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbPublisher, true);
+            setVisibleButton(btSavePublisher, false);
+            setVisibleButton(btEditPublisher, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Publisher = tbPublisher.Text;
+        }
+
+        private void btSaveNumber_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbNumber, true);
+            setVisibleButton(btSaveNumber, false);
+            setVisibleButton(btEditNumber, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Number = tbNumber.Text;
+        }
+
+        private void btSavePages_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbPages, true);
+            setVisibleButton(btSavePages, false);
+            setVisibleButton(btEditPages, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Pages = tbPages.Text;
+        }
+
+        private void btSaveDoi_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbDoi, true);
+            setVisibleButton(btSaveDoi, false);
+            setVisibleButton(btEditDoi, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Doi = tbDoi.Text;
+        }
+
+        private void btSaveUrl_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbUrl, true);
+            setVisibleButton(btSaveUrl, false);
+            setVisibleButton(btEditUrl, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Url = tbUrl.Text;
+        }
+
+        private void btSaveAffiliation_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbAffiliation, true);
+            setVisibleButton(btSaveAffiliation, false);
+            setVisibleButton(btEditKeywords, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Affiliation = tbAffiliation.Text;
+        }
+
+        private void btSaveKeywords_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbKeywords, true);
+            setVisibleButton(btSaveKeywords, false);
+            setVisibleButton(btEditKeywords, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Keywords = tbKeywords.Text;
+        }
+
+        private void btSaveSource_Click(object sender, EventArgs e)
+        {
+            setReadOnlyTextBox(tbSourсe, true);
+            setVisibleButton(btSaveSource, false);
+            setVisibleButton(btEditSource, true);
+            ((LibItem)lvLibItems.SelectedItems[0].Tag).Sourсe = tbSourсe.Text;
         }
     }
 }

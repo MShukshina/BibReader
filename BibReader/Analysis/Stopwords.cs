@@ -4,6 +4,8 @@ namespace BibReader.Analysis
 {
     public class Stopwords
     {
+        public static List<string> userStopwords = new List<string>();
+
         public static List<string> pronouns_en = new List<string>
         {
             "you", "she", "they","him", "her", "them",

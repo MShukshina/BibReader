@@ -15,13 +15,25 @@ namespace BibReader.Readers.ELibraryScraper
             getBibFile(table, bibFile);
         }
 
+        private bool isConference(string documentName)
+        {
+            return Regex.Match(
+                documentName, 
+                @"(?i)(\W|^)(В сборнике|коференция|коференции|семинар|симпозиум|conference|conferenceon|symposium)(\W|$)"
+            ).Success;
+        }
+        private bool isBook(string documentName)
+        {
+            return Regex.Match(documentName, @"(?i)(\W|^)В книге:(\W|$)").Success;
+        }
+
         public string getDocumentType(string documentName)
         {
             string doc_type = "";
-            if (Regex.Match(documentName, @"(?i)(\W|^)(В сборнике|коференция|коференции|семинар|симпозиум|conference|conferenceon|symposium)(\W|$)").Success)
+            if (isConference(documentName))
                 doc_type = "conference";
 
-            if (Regex.Match(documentName, @"(?i)(\W|^)В книге:(\W|$)").Success || doc_type == "")
+            if (isBook(documentName) || doc_type == "")
                 doc_type = "book";
 
             return doc_type;
